@@ -5,14 +5,13 @@ def user_input():
 
 
 def calc(num):
-    opperator = False
-    if num == 1:
-        print(num, "is not a prime number")
-    elif num > 1:
-        for counter in range(2, num):
-            if (num % counter) == 0:
-                opperator = True
-                return opperator
+    if num <= 1:
+        return False  # Numbers less than or equal to 1 are not prime
+    for counter in range(2, int(num ** 0.5) + 1):
+        if (num % counter) == 0:
+            return False  # Not a prime number
+    return True  # Is a prime number
+
             
                    
 def output(opperator,num):
